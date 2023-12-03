@@ -5,9 +5,6 @@ from typing import Tuple
 import os
 
 
-class CsvFileNotFound(Exception):
-    pass
-
 def validate_csv_exists(csv_filename: str) -> bool:
     return os.path.exists(csv_filename)
     

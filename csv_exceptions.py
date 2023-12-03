@@ -1,0 +1,2 @@
+class CsvFileNotFound(Exception):
+    pass
