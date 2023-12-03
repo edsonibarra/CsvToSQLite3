@@ -3,6 +3,7 @@ import sqlite3
 import argparse
 from typing import Tuple
 import os
+from csv_exceptions import CsvFileNotFound
 
 
 def validate_csv_exists(csv_filename: str) -> bool:
@@ -11,7 +12,7 @@ def validate_csv_exists(csv_filename: str) -> bool:
 def transform(csv_filename: str, db_name: str):
     if not validate_csv_exists(csv_filename):
         raise CsvFileNotFound("The csv file was not found")
-
+    
 def arg_parser() -> Tuple[str]:
     parser = argparse.ArgumentParser()
     parser.add_argument("-csv", "--csv_filename", type=str, help="CSV Filename, should be on root directory")
