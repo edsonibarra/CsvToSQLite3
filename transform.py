@@ -29,7 +29,7 @@ def arg_parser() -> Tuple[str]:
 def main() -> None:
     args = arg_parser()
     print(validate_csv_exists(args.csv_filename))
-    transform(args.csv_filename, args.db_name)
+    transform(args.csv_filename, args.db_name, args.table_name)
     
 
 if __name__ == "__main__":
