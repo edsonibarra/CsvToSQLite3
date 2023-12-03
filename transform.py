@@ -5,11 +5,15 @@ from typing import Tuple
 import os
 
 
+class CsvFileNotFound(Exception):
+    pass
+
 def validate_csv_exists(csv_filename: str) -> bool:
     return os.path.exists(csv_filename)
     
 def transform(csv_filename: str, db_name: str):
-    pass
+    if not validate_csv_exists(csv_filename):
+        raise CsvFileNotFound("The csv file was not found")
 
 def arg_parser() -> Tuple[str]:
     parser = argparse.ArgumentParser()
