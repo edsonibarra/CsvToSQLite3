@@ -6,6 +6,9 @@ import os
 from csv_exceptions import CsvFileNotFound
 
 
+class CsvTransform:
+    pass
+
 def validate_csv_exists(csv_filename: str) -> bool:
     return os.path.exists(csv_filename)
     
